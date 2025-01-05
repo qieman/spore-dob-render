@@ -1,0 +1,45 @@
+{
+  "name": "@nervina-labs/dob-render",
+  "version": "0.0.1",
+  "description": "RGB++ DOB render SDK",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "overrides": {},
+  "files": [
+    "src",
+    "dist"
+  ],
+  "scripts": {
+    "test": "vitest",
+    "build": "tsup",
+    "lint": "tsc && eslint '{src,tests}/**/*.{js,ts}' && prettier --check '{src,tests}/**/*.{js,ts}'",
+    "lint:fix": "tsc && eslint --fix '{src,tests}/**/*.{js,ts}' && prettier --write '{src,tests}/**/*.{js,ts}'"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@types/node": "^20.12.11",
+    "prettier": "^3.2.5",
+    "tsconfig": "workspace:*",
+    "tsup": "^8.0.2",
+    "vitest": "^1.6.0"
+  },
+  "dependencies": {
+    "satori": "^0.10.13",
+    "typescript": "^5.2.2"
+  },
+  "peerDependencies": {
+    "satori": "^0.10.13"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
