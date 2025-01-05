@@ -1,6 +1,6 @@
 {
   "name": "@nervina-labs/dob-render",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "RGB++ DOB render SDK",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -44,6 +44,8 @@
     "entry": ["src/index.ts"],
     "splitting": false,
     "sourcemap": true,
-    "clean": true
+    "clean": true,
+    "dts": true,
+    "format": ["esm","cjs"]
   }
 }
