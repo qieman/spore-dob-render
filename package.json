@@ -1,6 +1,6 @@
 {
   "name": "@nervina-labs/dob-render",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "RGB++ DOB render SDK",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -20,15 +20,13 @@
   ],
   "scripts": {
     "test": "vitest",
-    "build": "tsup",
+    "build": "tsup --dts",
     "lint": "tsc && eslint '{src,tests}/**/*.{js,ts}' && prettier --check '{src,tests}/**/*.{js,ts}'",
     "lint:fix": "tsc && eslint --fix '{src,tests}/**/*.{js,ts}' && prettier --write '{src,tests}/**/*.{js,ts}'"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
     "@types/node": "^20.12.11",
     "prettier": "^3.2.5",
-    "tsconfig": "workspace:*",
     "tsup": "^8.0.2",
     "vitest": "^1.6.0"
   },
@@ -41,5 +39,11 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "tsup": {
+    "entry": ["src/index.ts"],
+    "splitting": false,
+    "sourcemap": true,
+    "clean": true
   }
 }
